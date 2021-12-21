@@ -1,0 +1,103 @@
+model_selector:DEBUG 2021-12-21 08:04:46,270 -  Starting Class
+model_selector:DEBUG 2021-12-21 08:04:46,273 -  Current train.head()
+   MSSubClass  MSZoning  Neighborhood  Condition1  HouseStyle  OverallQual  YearBuilt  Exterior1st  MasVnrType  ExterQual  Foundation  BsmtQual  TotalBsmtSF  1stFlrSF  GrLivArea  FullBath  KitchenQual  TotRmsAbvGrd  GarageArea  SalePrice
+0          60         3             5           2           5            7       2003           13           1          2           2         2       856.00       856       1710         2            2             8      548.00     208500
+0          20         2            12           1           2            5       1961           13           2          3           1         4       882.00       896        896         1            3             5      730.00     208500
+1          20         3            24           1           2            6       1976            8           2          3           1         2     1,262.00      1262       1262         2            3             6      460.00     181500
+1          20         3            12           2           2            6       1958           14           1          3           1         4     1,329.00      1329       1329         1            2             6      312.00     181500
+2          60         3             5           2           5            7       2001           13           1          2           2         2       920.00       920       1786         2            2             6      608.00     223500
+model_selector:DEBUG 2021-12-21 08:04:46,278 -  Current train.info()
+<class 'pandas.core.frame.DataFrame'>
+Int64Index: 1460 entries, 0 to 1459
+Data columns (total 20 columns):
+ #   Column        Non-Null Count  Dtype  
+---  ------        --------------  -----  
+ 0   MSSubClass    1460 non-null   int64  
+ 1   MSZoning      1460 non-null   int64  
+ 2   Neighborhood  1460 non-null   int64  
+ 3   Condition1    1460 non-null   int64  
+ 4   HouseStyle    1460 non-null   int64  
+ 5   OverallQual   1460 non-null   int64  
+ 6   YearBuilt     1460 non-null   int64  
+ 7   Exterior1st   1460 non-null   int64  
+ 8   MasVnrType    1460 non-null   int64  
+ 9   ExterQual     1460 non-null   int64  
+ 10  Foundation    1460 non-null   int64  
+ 11  BsmtQual      1460 non-null   int64  
+ 12  TotalBsmtSF   1460 non-null   float64
+ 13  1stFlrSF      1460 non-null   int64  
+ 14  GrLivArea     1460 non-null   int64  
+ 15  FullBath      1460 non-null   int64  
+ 16  KitchenQual   1460 non-null   int64  
+ 17  TotRmsAbvGrd  1460 non-null   int64  
+ 18  GarageArea    1460 non-null   float64
+ 19  SalePrice     1460 non-null   int64  
+dtypes: float64(2), int64(18)
+memory usage: 239.5 KB
+
+model_selector:DEBUG 2021-12-21 08:04:46,305 -  Current train.describe()
+       MSSubClass  MSZoning  Neighborhood  Condition1  HouseStyle  OverallQual  YearBuilt  Exterior1st  MasVnrType  ExterQual  Foundation  BsmtQual  TotalBsmtSF  1stFlrSF  GrLivArea  FullBath  KitchenQual  TotRmsAbvGrd  GarageArea  SalePrice
+count    1,460.00  1,460.00      1,460.00    1,460.00    1,460.00     1,460.00   1,460.00     1,460.00    1,460.00   1,460.00    1,460.00  1,460.00     1,460.00  1,460.00   1,460.00  1,460.00     1,460.00      1,460.00    1,460.00   1,460.00
+mean        56.84      3.03         12.26        2.03        3.03         6.09   1,971.20        10.24        1.76       2.54        1.40      2.73     1,052.61  1,158.79   1,509.92      1.56         2.34          6.51      472.12 180,952.19
+std         42.32      0.63          6.01        0.87        1.91         1.38      30.18         3.63        0.61       0.69        0.72      1.28       414.78    371.87     507.81      0.55         0.83          1.62      212.24  79,443.83
+min         20.00      0.00          0.00        0.00        0.00         1.00   1,872.00         0.00        0.00       0.00        0.00      0.00         0.00    334.00     334.00      0.00         0.00          2.00        0.00  34,900.00
+25%         20.00      3.00          7.00        2.00        2.00         5.00   1,954.00         8.00        1.00       2.00        1.00      2.00       795.75    882.00   1,128.00      1.00         2.00          5.00      329.50 129,975.00
+50%         50.00      3.00         12.00        2.00        2.00         6.00   1,972.00        13.00        2.00       3.00        1.00      2.00       991.00  1,086.00   1,458.50      2.00         3.00          6.00      479.50 163,000.00
+75%         70.00      3.00         17.00        2.00        5.00         7.00   2,000.00        13.00        2.00       3.00        2.00      4.00     1,297.25  1,390.25   1,776.00      2.00         3.00          7.00      576.00 214,000.00
+max        190.00      4.00         24.00        8.00        7.00        10.00   2,010.00        15.00        3.00       3.00        5.00      4.00     3,206.00  3,228.00   4,476.00      3.00         3.00         14.00    1,390.00 755,000.00
+model_selector:DEBUG 2021-12-21 08:04:46,308 -  Current test.head()
+   MSSubClass  MSZoning  Neighborhood  Condition1  HouseStyle  OverallQual  YearBuilt  Exterior1st  MasVnrType  ExterQual  Foundation  BsmtQual  TotalBsmtSF  1stFlrSF  GrLivArea  FullBath  KitchenQual  TotRmsAbvGrd  GarageArea
+2          60         3             8           2           5            5       1997           13           2          3           2         2       928.00       928       1629         2            3             6      482.00
+3          60         3             8           2           5            6       1998           13           1          3           2         4       926.00       926       1604         2            2             7      470.00
+4         120         3            22           2           2            8       1992            6           2          2           2         2     1,280.00      1280       1280         2            2             5      506.00
+5          60         3             8           2           5            6       1993            6           2          3           2         2       763.00       763       1655         2            3             7      440.00
+6          20         3             8           2           2            6       1992            6           2          3           2         2     1,168.00      1187       1187         2            3             6      420.00
+model_selector:DEBUG 2021-12-21 08:04:46,313 -  Current test.info()
+<class 'pandas.core.frame.DataFrame'>
+Int64Index: 1455 entries, 2 to 1458
+Data columns (total 19 columns):
+ #   Column        Non-Null Count  Dtype  
+---  ------        --------------  -----  
+ 0   MSSubClass    1455 non-null   int64  
+ 1   MSZoning      1455 non-null   int64  
+ 2   Neighborhood  1455 non-null   int64  
+ 3   Condition1    1455 non-null   int64  
+ 4   HouseStyle    1455 non-null   int64  
+ 5   OverallQual   1455 non-null   int64  
+ 6   YearBuilt     1455 non-null   int64  
+ 7   Exterior1st   1455 non-null   int64  
+ 8   MasVnrType    1455 non-null   int64  
+ 9   ExterQual     1455 non-null   int64  
+ 10  Foundation    1455 non-null   int64  
+ 11  BsmtQual      1455 non-null   int64  
+ 12  TotalBsmtSF   1455 non-null   float64
+ 13  1stFlrSF      1455 non-null   int64  
+ 14  GrLivArea     1455 non-null   int64  
+ 15  FullBath      1455 non-null   int64  
+ 16  KitchenQual   1455 non-null   int64  
+ 17  TotRmsAbvGrd  1455 non-null   int64  
+ 18  GarageArea    1455 non-null   float64
+dtypes: float64(2), int64(17)
+memory usage: 227.3 KB
+
+model_selector:DEBUG 2021-12-21 08:04:46,338 -  Current test.describe()
+       MSSubClass  MSZoning  Neighborhood  Condition1  HouseStyle  OverallQual  YearBuilt  Exterior1st  MasVnrType  ExterQual  Foundation  BsmtQual  TotalBsmtSF  1stFlrSF  GrLivArea  FullBath  KitchenQual  TotRmsAbvGrd  GarageArea
+count    1,455.00  1,455.00      1,455.00    1,455.00    1,455.00     1,455.00   1,455.00     1,455.00    1,455.00   1,455.00    1,455.00  1,455.00     1,455.00  1,455.00   1,455.00  1,455.00     1,455.00      1,455.00    1,455.00
+mean        57.35      3.03         12.62        2.05        3.01         6.08   1,971.39        10.22        1.77       2.52        1.39      2.67     1,045.77  1,157.13   1,486.39      1.57         2.35          6.39      472.34
+std         42.70      0.68          5.90        0.88        1.92         1.44      30.38         3.64        0.60       0.71        0.73      1.31       443.95    398.37     485.95      0.56         0.84          1.51      217.48
+min         20.00      0.00          0.00        0.00        0.00         1.00   1,879.00         0.00        0.00       0.00        0.00      0.00         0.00    407.00     407.00      0.00         0.00          3.00        0.00
+25%         20.00      3.00          8.00        2.00        2.00         5.00   1,953.00         8.00        1.00       2.00        1.00      2.00       784.00    874.00   1,117.50      1.00         2.00          5.00      317.50
+50%         50.00      3.00         12.00        2.00        2.00         6.00   1,973.00        13.00        2.00       3.00        1.00      2.00       988.00  1,080.00   1,432.00      2.00         3.00          6.00      480.00
+75%         70.00      3.00         17.00        2.00        5.00         7.00   2,001.00        13.00        2.00       3.00        2.00      4.00     1,304.00  1,383.50   1,722.50      2.00         3.00          7.00      576.00
+max        190.00      4.00         24.00        8.00        7.00        10.00   2,010.00        15.00        3.00       3.00        5.00      4.00     5,095.00  5,095.00   5,095.00      4.00         3.00         15.00    1,488.00
+model_selector:DEBUG 2021-12-21 08:04:46,338 -  Creating X and y dataframes
+model_selector:DEBUG 2021-12-21 08:04:46,339 -  Creating train test split
+model_selector:DEBUG 2021-12-21 08:04:46,993 -   MSE from RandomForestRegressor(random_state=42): 26738.342051829793
+model_selector:DEBUG 2021-12-21 08:04:47,016 -   MSE from LinearRegression(): 29940.20865924875
+model_selector:DEBUG 2021-12-21 08:04:47,021 -   MSE from Ridge(): 29937.839574234986
+model_selector:DEBUG 2021-12-21 08:04:47,026 -   MSE from Lasso(): 29939.87949386738
+model_selector:DEBUG 2021-12-21 08:04:47,026 -  The model with best result was Random Forest
+model_selector:DEBUG 2021-12-21 08:05:35,334 -  
+The best parameters are:
+{'min_samples_leaf': 2, 'n_estimators': 1000}
+model_selector:DEBUG 2021-12-21 08:05:35,334 -  The best score is: 0.8522962664705102

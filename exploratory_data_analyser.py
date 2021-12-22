@@ -35,12 +35,13 @@ class DataAnalyser:
         self.centralair_swarmplot()
         self.garage_regplot()
         self.grlivarea_outlier_scatterplot()
+        self.logger.debug('Closing Class')
 
     def df_current_state(self, buf):
-        self.logger.debug(f"Current combine.head()\n{self.df_train.head()}")
+        self.logger.debug(f"Current train.head()\n{self.df_train.head()}")
         self.df_train.info(buf=buf)
-        self.logger.debug(f"Current combine.info()\n{buf.getvalue()}")
-        self.logger.debug(f"Current combine.describe()\n{self.df_train.describe(include='all')}")
+        self.logger.debug(f"Current train.info()\n{buf.getvalue()}")
+        self.logger.debug(f"Current train.describe()\n{self.df_train.describe(include='all')}")
 
     def sales_dist_plot(self):
         self.logger.debug(f'Generating sales_dist_plot.png')
